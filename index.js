@@ -108,8 +108,8 @@ client.on('group-participants-update', async (anu) => {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
 				teks = `Hallo @${num.split('@')[0]}\Welcome to group *${mdata.subject}* Jangan lupa intro kau!...Betah-betah yah di sini🖤`
-				let buff = await getBuffer(ppimg)
-				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				let buffer = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buffer, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				try {
@@ -118,8 +118,8 @@ client.on('group-participants-update', async (anu) => {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
 				teks = `Sayonara🥳 @${num.split('@')[0]} Al-fatihah buat yang left/terkick!.`
-				let buff = await getBuffer(ppimg)
-				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				let buffer = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buffer, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
@@ -290,8 +290,8 @@ client.on('group-participants-update', async (anu) => {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								client.sendMessage(from, buff, sticker, {quoted: mek})
+								buffer = fs.readFileSync(ran)
+								client.sendMessage(from, buffer, sticker, {quoted: mek})
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
@@ -316,8 +316,8 @@ client.on('group-participants-update', async (anu) => {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								client.sendMessage(from, buff, sticker, {quoted: mek})
+								buffer = fs.readFileSync(ran)
+								client.sendMessage(from, buffer, sticker, {quoted: mek})
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
@@ -340,8 +340,8 @@ client.on('group-participants-update', async (anu) => {
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								buff = fs.readFileSync(ranw)
-								client.sendMessage(from, buff, sticker, {quoted: mek})
+								buffer = fs.readFileSync(ranw)
+								client.sendMessage(from, buffer, sticker, {quoted: mek})
 							})
 						})					
 					} else {
@@ -361,9 +361,9 @@ client.on('group-participants-update', async (anu) => {
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
-							buff = fs.readFileSync(rano)
+							buffer = fs.readFileSync(rano)
 							if (err) return reply('𝗬𝗲𝗮𝗵 𝗴𝗮𝗴𝗮𝗹 ;(, 𝘂𝗹𝗮𝗻𝗴𝗶 𝗹𝗮𝗴𝗶 𝘆𝗮𝗵 𝘁𝗼𝗱 ^_^')
-							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
+							client.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
 					})
@@ -606,8 +606,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 				case 'qrcode':
 					const tex = encodeURIComponent(body.slice(8))
 					if (!tex) return client.sendMessage(from, 'masukan teks/url!', text, {quoted: mek})
-					const buff = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
-					client.sendMessage(from, buff, image, {quoted: mek})
+					const buffer = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
+					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
                                 case 'wikien':
 					if (args.length < 1) return reply('𝐦𝐚𝐬𝐮𝐤𝐤𝐚𝐧 𝐤𝐚𝐭𝐚 𝐤𝐮𝐧𝐜𝐢')
@@ -664,9 +664,9 @@ client.sendMessage(from, drre, text, {quoted: mek})
                       gh = body.slice(11)
                       gl1 = gh.split("|")[0];
                       gl2 = gh.split("|")[1];
-                      buff = await getBuffer(`https://api.vhtear.com/silktext?text=${gl1}&text2=${gl2}&apikey=ANTIGRATISNIHANJENKKK`)
+                      buffer = await getBuffer(`https://api.vhtear.com/silktext?text=${gl1}&text2=${gl2}&apikey=ANTIGRATISNIHANJENKKK`)
                       reply(mess.wait)
-                      client.sendMessage(from, buff, image, {quoted: mek, caption: 'thund ni '+gh})
+                      client.sendMessage(from, buffer, image, {quoted: mek, caption: 'thund ni '+gh})
                       break
                 case 'testing':
 					var gh = body.slice(9)
@@ -692,9 +692,9 @@ client.sendMessage(from, drre, text, {quoted: mek})
                       gl1 = gh.split("|")[0];
                       gl2 = gh.split("|")[1];
                       reply(mess.wait)
-                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=ninjalogo&text1=${gl1}&text2=${gl2}`, {method: 'get'})
-                      buff = await getBuffer(anu.result)
-                      client.sendMessage(from, buff, image, {quoted: mek})
+                      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=ninjalogo&text1=${gl1}&text2=${gl2}&apikey=BotWeA`, {method: 'get'})
+                      buffer = await getBuffer(anu.result)
+                      client.sendMessage(from, buffer, image, {quoted: mek})
                       break
                 case 'glitch':
 					var gh = body.slice(8)
@@ -737,8 +737,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					if (tels.ength > 15) return reply('Teksnya kepanjangan, maksimal 20 karakter')
 					reply(mess.wait)
 					anu = await fetchJson(`https://zeksapi.herokuapp.com/api/epep?text=${tels}&apikey=xptnbot`, {method: 'get'})
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
                 case 'wolflogo':
                       if (args.length < 1) return reply('Teks nya mana?')
@@ -747,8 +747,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
                       gl2 = gh.split("|")[1];
                       reply(mess.wait)
                       anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=wolflogo1&text1=${gl1}&text2=${gl2}`, {method: 'get'})
-                      buff = await getBuffer(anu.result)
-                      client.sendMessage(from, buff, image, {quoted: mek})
+                      buffer = await getBuffer(anu.result)
+                      client.sendMessage(from, buffer, image, {quoted: mek})
                       break
                 case 'lionlogo':
                       if (args.length < 1) return reply('Teks nya mana?')
@@ -757,8 +757,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
                       gl2 = gh.split("|")[1];
                       reply(mess.wait)
                       anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=lionlogo&text1=${gl1}&text2=${gl2}`, {method: 'get'})
-                      buff = await getBuffer(anu.result)
-                      client.sendMessage(from, buff, image, {quoted: mek})
+                      buffer = await getBuffer(anu.result)
+                      client.sendMessage(from, buffer, image, {quoted: mek})
                       break
                                 case 'bucin':
 					gatauda = body.slice(7)
@@ -849,8 +849,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/nulis?text=${teks}&apiKey=${apiKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: mess.success})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: mess.success})
 					break
 				case 'quotes':
                                         client.updatePresence(from, Presence.composing)
@@ -867,8 +867,8 @@ client.sendMessage(from, drre, text, {quoted: mek})
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/url2image?tipe=${args[0]}&url=${args[1]}&apiKey=${apiKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
 				case 'tstiker':
 				case 'tsticker': 
@@ -949,9 +949,9 @@ break
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						buff = await client.downloadMediaMessage(encmedia)
+						buffer = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
+							client.sendMessage(_.jid, buffer, image, {caption: `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
 						}
 						reply('𝙨𝙪𝙘𝙘𝙚𝙨𝙨 𝙗𝙧𝙤𝙖𝙙𝙘𝙖𝙨𝙩 ')
 					} else {
