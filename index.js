@@ -47,11 +47,11 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 
 const config = {
-    Akb4R: 'BARXNL-BOT', // TOBAT SU ASU
-    instagram: 'https://instagram.com/barxnl', // INFO JANGAN DI UBAH
-    nomer: 'wa.me/6282198571732', // INFO SU JNGAN DI UBAH
-    youtube: 'https://youtube.com/channel/UCGYLWtyT9I', // KINTIL
-    whatsapp: 'https://chat.whatsapp.com/DSSHmG2KjKJLoFB9mkVs', // BABI
+    Akb4R: 'MILENABOT', // TOBAT SU ASU
+    instagram: 'https://instagram.com/cy_chris.trash', // INFO JANGAN DI UBAH
+    nomer: 'wa.me//5581996207906', // INFO SU JNGAN DI UBAH
+    youtube: 'OFF', // KINTIL
+    whatsapp: 'OFF', // BABI
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
     waktu: time
 }
