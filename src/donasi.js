@@ -20,10 +20,8 @@ const donasi = () => {
 ┃Thanks To : 𝑪𝒀𝑪𝑯𝑹𝑰𝑺 ID
 ┃Follow Ig : cy_chris.trash
 ┃Owner Bot : Muhammad Akbar💞
-┃Follow Ig : 
+┃Follow Ig : @eu
 ┃ 
-┃Sc ini dari Aris187 ID.
-┃Jika ingin donasi Silahkan!
 ┣━━━━━━━━━━━━━━━━━━━━
 ┃ 💎𝑴𝑰𝑳𝑬𝑵𝑨/𝑩𝑶𝑻
 ┗━━━━━━━━━━━━━━━━━━━━`
